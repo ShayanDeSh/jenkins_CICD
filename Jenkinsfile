@@ -51,6 +51,7 @@ pipeline {
                 script {
                     def image_id = registry + ":$BUILD_NUMBER"
                     sh "python --version"
+                    sh "pip install openshift"
                     sh "ansible-playbook ./ansible/playbook.yml --extra-vars \"image_id=${image_id}\""
                 }
             }
