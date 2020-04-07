@@ -2,6 +2,7 @@ package main
 
 import (
 	"io/ioutil"
+	"log"
 	"net/http"
 	"net/http/httptest"
 	"testing"
@@ -19,7 +20,7 @@ func TestServerHTTP(t *testing.T) {
 	if resp.StatusCode != 200 {
 		t.Fatal("Received non-200")
 	}
-	expected := `{"message": "hello world"}`
+	expected := `{"message": "Hello World!"}`
 	actual, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		t.Fatal(err)
