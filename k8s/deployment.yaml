@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: jenkins_depoyment
+    labels:
+        app: jenkins
+spec:
+    replicas: 2
+    selector:
+        matchLabels:
+            app: jenkins
+    template:
+        metadata:
+            labels:
+                app: jenkins
+        spec:
+            containers:
+                - name: golang_server
+                  image: "{{ image_id }}"
+                  resources:
+                      requests:
+                          cpu: "10m"
+                          memory: "128Mi"
