@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        registry = "nothingrealm/jenkins_CICD"
+        registry = "nothingrealm/jenkins_cicd"
         GOCACHE = "/tmp"
     }
     stages {
