@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-    name: jenkins_depoyment
+    name: jenkins-depoyment
     labels:
         app: jenkins
 spec:
@@ -15,7 +15,7 @@ spec:
                 app: jenkins
         spec:
             containers:
-                - name: golang_server
+                - name: golang-server
                   image: "{{ image_id }}"
                   resources:
                       requests:
